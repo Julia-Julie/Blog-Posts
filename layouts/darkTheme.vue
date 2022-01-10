@@ -38,6 +38,6 @@ export default {
 }
 
 .container--dark {
-  background-color: grey;
+  background-color: #a16969;
 }
 </style>
