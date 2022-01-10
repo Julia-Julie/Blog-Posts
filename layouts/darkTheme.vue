@@ -25,6 +25,7 @@ export default {
     NavBar,
   },
 };
+
 </script>
 
 <style>
