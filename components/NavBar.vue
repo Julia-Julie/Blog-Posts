@@ -1,5 +1,4 @@
 <template>
-  <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -18,5 +17,4 @@
         </div>
       </div>
     </nav>
-  </header>
 </template>

@@ -8,7 +8,7 @@
     <!-- Main -->
     <main>
       <div class="container container--dark ">
-        <nuxt />
+        <nuxt/>
       </div>
     </main>
 
@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import NavBar from "@/components/Navbar";
+import NavBar from "~/components/NavBar";
+
 export default {
   components: {
     NavBar,
@@ -35,7 +36,7 @@ export default {
   min-height: 100vh;
 }
 
-.container--dark{
+.container--dark {
   background-color: grey;
 }
 </style>
