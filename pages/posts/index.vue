@@ -1,11 +1,11 @@
 <template>
-  <h1>contacts PAGE</h1>
+  <h1>posts PAGE</h1>
 </template>
 
 <script>
 export default {
-  layout:'darkTheme',
-
+  name: 'Posts',
+  layout: 'darkTheme',
 }
 </script>
 

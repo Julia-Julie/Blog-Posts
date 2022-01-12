@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name:'About',
   data() {
     return {
       heading: 'ABOUT PAGE!!!!'
@@ -13,7 +14,7 @@ export default {
 </script>
 
 <style scoped>
-  h1{
-    color: orange;
-  }
+h1{
+  color: orange;
+}
 </style>
