@@ -8,25 +8,32 @@
     <!-- Main -->
     <main>
       <div class="container">
-        <nuxt />
+        <nuxt/>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer>footer</footer>
+    <footer>{{footer}}</footer>
   </div>
 </template>
 
 <script>
-import NavBar from "~/components/NavBar";
+
 export default {
-  components: {
-    NavBar,
-  },
+  name:"default",
+  data(){
+    return{
+      footer: 'footer'
+    }
+  }
 };
 </script>
 
 <style>
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
