@@ -1,0 +1,43 @@
+.post {
+  box-shadow: 0 0 6px 1px #ccc;
+  transition: box-shadow, background-color .3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px 2px #ccc;
+    background-color: #ccc;
+  }
+
+  &__article {
+    height: 100%;
+  }
+
+  &__item {
+    text-decoration: none;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__header {
+    font-weight: 500;
+  }
+
+  &__thumbnail{
+    height: 100px;
+    background-color: #74ccb6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__content {
+    height: 100%;
+    font-style: italic;
+    padding: 15px;
+
+    :not(.post__footer):not(b) {
+      color: #7a4d4d;
+    }
+  }
+}

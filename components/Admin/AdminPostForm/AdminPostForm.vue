@@ -1,0 +1,80 @@
+<template>
+  <section class="new-post">
+    <form @submit.prevent="onSave">
+      <label for="name">Author Name</label>
+      <input v-model="editedPost.name" id="name" type="text">
+
+      <label for="title">Title</label>
+      <input v-model="editedPost.title" id="title" type="text">
+
+      <label for="thumbnail">Thumbnail link</label>
+      <input v-model="editedPost.thumbnail" id="thumbnail" type="text">
+
+      <label for="content">Content</label>
+      <textarea v-model="editedPost.content" id="content" rows="10"></textarea>
+
+      <input type="submit" id="submit">
+
+      <button id="cancel" @click.prevent="onCancel">Cancel</button>
+    </form>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'AdminPostForm',
+  props: {
+    post: {
+      type: Object,
+      required: false
+    }
+  },
+  data() {
+    return {
+      editedPost:
+        this.post
+          ? {...this.post}
+          : {
+        name: '',
+        title: '',
+        thumbnail: '',
+        content: '',
+      }
+    }
+  },
+  methods: {
+    onSave() {
+      console.log(this.editedPost)
+    },
+    onCancel() {
+      this.$router.push('/admin')
+    }
+  }
+}
+</script>
+<style lang="scss" scoped>
+
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  font-size: 2rem;
+  color: slategray;
+  border-radius: 3px;
+}
+
+button[id="cancel"],
+input[id="submit"] {
+  display: inline-block;
+  width: auto;
+  margin-top: 15px;
+  margin-right: 15px;
+  background-color: slategray;
+  color: bisque;
+  border-radius: 5px;
+}
+</style>

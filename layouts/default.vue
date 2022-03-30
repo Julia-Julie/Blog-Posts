@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -40,5 +40,6 @@ body {
   height: 100%;
   justify-content: space-between;
   min-height: 100vh;
+  background-color: lavender;
 }
 </style>

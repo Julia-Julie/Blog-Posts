@@ -28,10 +28,18 @@ export default {
     return {
       navs: [
         {url: '/', title: 'Home'},
-        {url: '/about', title: 'About'},
         {url: '/posts', title: 'Posts'},
+        {url: '/about', title: 'About'},
       ]
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.nuxt-link-active.nuxt-link-exact-active {
+  color: #112b69;
+}
+
+</style>
