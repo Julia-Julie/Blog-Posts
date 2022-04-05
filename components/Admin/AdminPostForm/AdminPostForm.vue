@@ -11,7 +11,7 @@
       <input v-model="editedPost.thumbnail" id="thumbnail" type="text">
 
       <label for="content">Content</label>
-      <textarea v-model="editedPost.content" id="content" rows="10"></textarea>
+      <textarea v-model="editedPost.content" id="content" rows="5"></textarea>
 
       <input type="submit" id="submit">
 
@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'AdminPostForm',
   props: {
@@ -32,19 +34,40 @@ export default {
   data() {
     return {
       editedPost:
-        this.post
-          ? {...this.post}
-          : {
-        name: '',
-        title: '',
-        thumbnail: '',
-        content: '',
-      }
+        this.post ? {...this.post} : {
+          name: '',
+          title: '',
+          thumbnail: '',
+          content: '',
+        }
     }
   },
+
+  computed: {
+    posts() {
+      return this.$store.state.posts
+    }
+  },
+
+  mounted() {
+    // console.log('{...this.post}', {...this.post})
+    // console.log('this.post', this.post)
+  },
+
   methods: {
+    ...mapActions([
+      'actionAddPosts'
+    ]),
     onSave() {
-      console.log(this.editedPost)
+      // console.log(this.editedPost)
+      const newPost = {
+        author: this.editedPost.name,
+        header: this.editedPost.title,
+        thumbnail: this.editedPost.thumbnail,
+        content: this.editedPost.content,
+      }
+      // console.log(newPost);
+      this.actionAddPosts(newPost);
     },
     onCancel() {
       this.$router.push('/admin')
@@ -60,9 +83,9 @@ button {
   border: none;
   outline: none;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: slategray;
   border-radius: 3px;
 }

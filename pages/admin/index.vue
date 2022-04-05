@@ -6,7 +6,7 @@
     </section>
     <section class="existing-posts">
       <h2>Existing posts</h2>
-      <post-list/>
+      <post-list :items="posts"/>
     </section>
   </section>
 </template>
@@ -15,15 +15,23 @@ import PostList from "../../components/Posts/PostList/PostList";
 
 export default {
   name: 'Admin',
+  data() {
+    return {
+    }
+  },
   components: {
     PostList
+  },
+  computed: {
+    posts() {
+      return this.$store.state.posts;
+    }
   },
   methods:{
     moveToNewPost(){
       this.$router.push('/admin/new-post')
     }
   }
-
 }
 </script>
 
