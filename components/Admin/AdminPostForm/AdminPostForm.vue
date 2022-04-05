@@ -10,6 +10,9 @@
       <label for="thumbnail">Thumbnail link</label>
       <input v-model="editedPost.thumbnail" id="thumbnail" type="text">
 
+      <label for="feedbacks">Post's feedbacks</label>
+      <input v-model="editedPost.feedbacks" id="feedbacks" type="text">
+
       <label for="content">Content</label>
       <textarea v-model="editedPost.content" id="content" rows="5"></textarea>
 
@@ -39,6 +42,7 @@ export default {
           title: '',
           thumbnail: '',
           content: '',
+          feedbacks: 0
         }
     }
   },
@@ -50,6 +54,7 @@ export default {
   },
 
   mounted() {
+    // console.log('this.$store', this.$store);
     // console.log('{...this.post}', {...this.post})
     // console.log('this.post', this.post)
   },
@@ -64,10 +69,11 @@ export default {
         author: this.editedPost.name,
         header: this.editedPost.title,
         thumbnail: this.editedPost.thumbnail,
+        feedbacks: Number(this.editedPost.feedbacks),
         content: this.editedPost.content,
       }
-      // console.log(newPost);
       this.actionAddPosts(newPost);
+      this.$router.push('/admin')
     },
     onCancel() {
       this.$router.push('/admin')

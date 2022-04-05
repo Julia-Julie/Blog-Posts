@@ -23,7 +23,7 @@
     font-weight: 500;
   }
 
-  &__thumbnail{
+  &__thumbnail {
     height: 100px;
     background-color: #74ccb6;
     background-position: center;
@@ -38,6 +38,21 @@
 
     :not(.post__footer):not(b) {
       color: #7a4d4d;
+    }
+  }
+
+  &__feedbacks {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 1px 5px;
+    color: orange !important;
+    background-color: lavenderblush;
+    border-radius: 8px;
+
+    i {
+      font-weight: bold;
+      color: orange !important;
+      text-decoration: underline;
     }
   }
 }
